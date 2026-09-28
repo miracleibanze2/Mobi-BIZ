@@ -15,17 +15,29 @@
     <p class="desc">
         A simple way to track your products and stock.
     </p>
-    <nav class="actions">
+    <nav>
         <ul>
-            <li><i class="fa-solid fa-boxes-stacked"></i> Inventory</li>
-            <li><i class="fa-solid fa-circle-up"></i> In Stock</li>
-            <li><i class="fa-solid fa-circle-down"></i> Out of Stock</li>
-            <li><i class="fa-solid fa-pen-to-square"></i> Add Item</li>
+            <li class="active" onclick="handletab('all', this)"><i class="fa-solid fa-boxes-stacked"></i> Inventory</li>
+            <li onclick="handletab('in', this)"><i class="fa-solid fa-circle-up"></i> In Stock</li>
+            <li onclick="handletab('out', this)"><i class="fa-solid fa-circle-down"></i> Out of Stock</li>
         </ul>
+        <div class="actions">
+            <button class="sell"><i class="fa-solid fa-cart-shopping"></i> Sell</button>
+            <button class="add"><i class="fa-solid fa-pen-to-square"></i> Add</button>
+        </div>
     </nav>
-    <div class="list"></div>
+    <div class="list all"></div>
     
     
+    <!-- Product card -->
+
+    <div class="productModel">
+        <div class="backdrop" onclick="toggleProductModel(false)"></div>
+
+        <div class="contents">
+
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut aliquid voluptate amet voluptatibus, assumenda ad itaque veritatis ullam, officia consectetur modi pariatur corrupti iure atque temporibus minus, neque quis quo.</div>
+        </div>
     
     <script src="script.js"></script>
 </body>
