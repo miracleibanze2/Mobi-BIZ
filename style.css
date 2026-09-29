@@ -67,6 +67,7 @@ body {
 .sidebarNav {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
     align-items: start;
     padding: 2rem 0 1rem;
