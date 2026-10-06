@@ -3,9 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Inventory | Mobi-BIZ</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
 </head>
 <body>
-    
+        <header>
+            <div></div>
+            <div></div>
+            <h2 class="title">
+                <i class="fa-solid fa-business-time"></i> Mobi-<span>BIZ</span>
+            </h2>
+            
+            <p class="desc">
+                A simple way to track your products and stock.
+            </p>
+        </header>
+        <nav>
+            <ul>
+                <li class="active" onclick="handletab('all', this)"><i class="fa-solid fa-boxes-stacked"></i> Inventory</li>
+                <li onclick="handletab('in', this)"><i class="fa-solid fa-circle-up"></i> In Stock</li>
+                <li onclick="handletab('out', this)"><i class="fa-solid fa-circle-down"></i> Out of Stock</li>
+            </ul>
+            <div class="actions">
+                <button class="sell" onclick="openStockModal('sell')">
+                    <i class="fa-solid fa-cart-shopping"></i> Sell
+                </button>
+
+                <button class="add" onclick="openStockModal('add')">
+                    <i class="fa-solid fa-box-open"></i> Add
+                </button>
+
+                <button class="new" onclick="openNewProductModal()">
+                    <i class="fa-solid fa-plus"></i> New
+                </button>
+            </div>
+        </nav>
+
+
+        <!-- List of product -->
+        <div class="list all"></div>
+        
+        
+        <!-- Product card -->
+        
+        <div class="productModel">
+            <!-- <div class="backdrop" onclick="toggleProductModel(false)"></div> -->
+            
+            <div class="contents">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut aliquid voluptate amet voluptatibus, assumenda ad itaque veritatis ullam, officia consectetur modi pariatur corrupti iure atque temporibus minus, neque quis quo.
+            </div>
+            
+        </div>
+        
+        <!-- stock model -->
+        <div class="stockModel">
+            <div class="stockContents">
+
+                <div class="stockHeader">
+                    <h2 id="stockTitle">Sell Products</h2>
+                    <button onclick="closeStockModal()">×</button>
+                </div>
+
+                <div id="stockProducts"></div>
+
+                <div class="stockTotal">
+                    <strong>Total</strong>
+                    <span id="stockTotal">0 RWF</span>
+                </div>
+
+                <div class="stockActions">
+                    <button onclick="confirmStockOperation()" id="stockConfirm">
+                        Sell
+                    </button>
+
+                    <button onclick="closeStockModal()">
+                        Cancel
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- New Product model -->
+
+        <div class="newProductModel">
+            <div class="newProductContents">
+
+                <div class="stockHeader">
+                    <h2>New Product</h2>
+
+                    <button onclick="closeNewProductModal()">×</button>
+                </div>
+
+                <form onsubmit="createProduct(event)">
+
+                    <input
+                        type="text"
+                        id="newTitle"
+                        placeholder="Product name"
+                        required
+                    >
+
+                    <textarea
+                        id="newDescription"
+                        placeholder="Product description"
+                        required
+                    ></textarea>
+
+                    <input
+                        type="number"
+                        id="newPrice"
+                        placeholder="Price"
+                        min="0"
+                        required
+                    >
+
+                    <input
+                        type="number"
+                        id="newQuantity"
+                        placeholder="Initial quantity"
+                        min="0"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="newImage"
+                        placeholder="Image path"
+                        required
+                    >
+
+                    <div class="stockActions">
+                        <button type="submit">
+                            Add Product
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="closeNewProductModal()"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
 </body>
 </html>

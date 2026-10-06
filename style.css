@@ -23,68 +23,17 @@ html {
 body {
     margin: 0 auto;
     min-height: 100vh;
-    display: flex;
     gap: 20px;
     color: white;
     position: relative;
-}
-
-.container {
     padding: 1rem;
     max-width: 768px;
     flex: 1;
-    margin: 0 auto;
-    width: 100%;
-}
-.sidebar {
-    position: sticky;
-    top: 0;
-    width: 150px;
-    height: 100vh;
-    border-right: 1px solid var(--borderColor);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-}
-.sidebar .title{
-    border-bottom: 1px solid var(--borderColor);
-    padding: 10px 15px;
-    /* text-align: center; */
-    margin: 0;
-    
-}
-
-.sidebar .title h3 {
-    margin: 0;
-    letter-spacing: 2px;
-}
-.sidebar .title p {
-    margin-top: 0;
-    font-size: 8px;
-    letter-spacing: 2px;
-}
-
-.sidebarNav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    align-items: start;
-    padding: 2rem 0 1rem;
-    flex: 1;
-}
-
-
-.sidebar a {
-    padding: .7rem 1rem;
-    text-decoration: none;
-    color: white;
+    margin: 0 auto ;
     width: 100%;
 }
 
-.sidebarNav a:last-child{
-    margin-top: auto;
-}
+
 
 header {
     flex: 1;
@@ -103,8 +52,8 @@ header {
 header div:first-child {
     width: 250px;
     height: 250px;
-    clip-path: circle();
     background-color: #ffffff22;
+    clip-path: circle();
     position: absolute;
     bottom: -150px;
     right: -50px;
